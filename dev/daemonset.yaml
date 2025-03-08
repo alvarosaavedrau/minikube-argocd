@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: example-daemonset
+  namespace: argocd-testing
 spec:
   selector:
     matchLabels:
