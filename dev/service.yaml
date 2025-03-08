@@ -1,13 +1,12 @@
 apiVersion: v1
-kind: Pod
+kind: Service
 metadata:
-  name: nginx-pod
-  namespace: argocd-testing
-  labels:
-    app: nginx
+  name: nginx-service
 spec:
-  containers:
-  - name: nginx
-    image: nginx:latest
-    ports:
-    - containerPort: 80
+  type: LoadBalancer
+  selector:
+    app: nginx
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
