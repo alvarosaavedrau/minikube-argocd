@@ -14,4 +14,4 @@ spec:
       containers:
       - name: example
         image: busybox
-        command: ["sh", "-c", "while true; do echo Hello from DaemonSet; sleep 10; done"]
+        command: ["sh", "-c", "while true; do echo Hello from DaemonSet, today is: $(date); sleep 10; done"]
