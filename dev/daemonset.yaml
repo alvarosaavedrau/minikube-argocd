@@ -1,18 +1,18 @@
-# apiVersion: apps/v1
-# kind: DaemonSet
-# metadata:
-#   name: example-daemonset
-#   namespace: argocd-testing
-# spec:
-#   selector:
-#     matchLabels:
-#       app: example
-#   template:
-#     metadata:
-#       labels:
-#         app: example
-#     spec:
-#       containers:
-#       - name: example
-#         image: busybox
-#         command: ["sh", "-c", "while true; do echo Hello from DaemonSet, today is: $(date); sleep 1; done"]
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: example-daemonset
+  namespace: argocd-testing
+spec:
+  selector:
+    matchLabels:
+      app: example
+  template:
+    metadata:
+      labels:
+        app: example
+    spec:
+      containers:
+      - name: example
+        image: busybox
+        command: ["sh", "-c", "while true; do echo Hello from DaemonSet, today is: $(date); sleep 1; done"]
